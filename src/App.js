@@ -8,6 +8,7 @@ import MyModal from "./components/UI/MyModal/MyModal";
 import {usePosts} from "./hooks/usePosts";
 import axios from "axios";
 import PostService from "./API/PostService";
+import GetNumberService from "./API/GetNumberService";
 import Loader from "./components/UI/Loader/Loader";
 import {useFetching} from "./hooks/useFetching";
 import {getPagesArray, getPagesCount} from "./utils/pages";
@@ -25,8 +26,7 @@ function App() {
     const [fetchPosts,isPostsLoading,postError] = useFetching(async (limit,page)=>{
         const response = await PostService.getAll(limit,page);
         setPosts(response.data)
-        console.log(response)
-        const totalCount = response.headers['length']
+        const totalCount = (await GetNumberService.getNumber()).data;
         setTotalPages(getPagesCount(totalCount,limit))
     })
     useEffect(() => {
@@ -42,7 +42,7 @@ function App() {
     }
     const removePost = async (post) => {
         setPosts([...posts.filter(p => p.id !== post.id)])
-        await axios.delete("http://localhost:8090/ServletPost?id=" + post.id)
+        await axios.delete("http://localhost:8090/ServletRemoveTask?id=" + post.id)
     }
     const changePage = (page) => {
         setPage(page)

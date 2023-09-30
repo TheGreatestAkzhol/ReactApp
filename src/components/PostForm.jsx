@@ -29,7 +29,7 @@ const PostForm = ({create}) => {
                 placeholder="Описание проделанных работ">
 
             </MyInput>
-            <MyButton onClick={addNewPost}>Создать пост</MyButton>
+            <MyButton onClick={addNewPost}>Создать таску</MyButton>
         </form>
     );
 };

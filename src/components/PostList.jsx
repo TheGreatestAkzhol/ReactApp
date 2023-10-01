@@ -2,6 +2,9 @@ import React from 'react';
 import PostItem from "./PostItem";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
+
 const PostList = ({posts,title,remove}) => {
     if(!posts.length){
         return(
@@ -23,7 +26,7 @@ const PostList = ({posts,title,remove}) => {
                         timeout={500}
                         classNames="post"
                         >
-                    <PostItem remove={remove} number={index+1} post={post} />
+                    <PostItem  remove={remove} number={index+1} post={post} />
                     </CSSTransition>
                 )}
             </TransitionGroup>

@@ -1,11 +1,14 @@
 import React from 'react';
 import classes from './MyButton.module.css'
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const MyButton = ({children, ...props}) => {
     return (
-        <button {...props} className={classes.myBtn}>
-            {children}
-        </button>
-    );
+    <Button {...props} className={classes.myBtn} variant="outline-primary">
+        {children}
+    </Button>
+
+);
 };
 
 export default MyButton;

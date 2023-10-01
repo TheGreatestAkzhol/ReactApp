@@ -1,8 +1,13 @@
 import React from 'react';
 import classes from './MyInput.module.css'
-const MyInput = React.forwardRef((props,ref) => {
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+
+const MyInput = React.forwardRef((props, ref) => {
     return (
-        <input ref={ref} className={classes.myInput} {...props}/>
+        <Form.Control
+            ref={ref} className={classes.myInput} {...props}
+        />
     );
 });
 

@@ -14,12 +14,12 @@ export default class AutoLoad{
             password: "admin"
         },{
             id: "3",
-            name: "Denis",
+            name: "Denys",
             surname: "Denisovich",
             password: "admin"
         }, {
             id: "4",
-            name: "Evgeniy",
+            name: "Evgeny",
             surname: "Bykov",
             password: "admin"
         }

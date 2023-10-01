@@ -14,6 +14,7 @@ import {useFetching} from "./hooks/useFetching";
 import {getPagesArray, getPagesCount} from "./utils/pages";
 import Pagination from "./components/UI/pagination/Pagination";
 import AutoLoad from "./API/AutoLoad";
+import MyNavbar from "./components/UI/navbar/MyNavbar";
 
 function App() {
     const [posts, setPosts] = useState([])
@@ -50,6 +51,7 @@ function App() {
     }
     return (
         <div className="App">
+            <MyNavbar></MyNavbar>
             <MyButton style={{marginTop: 30}} onClick={() => setModal(true)}>
                 Создать пользователя
             </MyButton>
@@ -71,7 +73,10 @@ function App() {
                 </div>
                 : <PostList remove={removePost} posts={sortedAndSearchedPosts} title={'Список постов'}/>
             }
-           <Pagination totalPages = {totalPages} changePage={changePage} page={page}/>
+           <Pagination
+               totalPages = {totalPages}
+               changePage={changePage}
+               page={page}/>
         </div>
     );
 }

@@ -14,11 +14,13 @@
 .post{
     display:flex;
     padding:15px;
-    border:2px solid teal;
     margin-top:15px;
     justify-content: space-between;
     align-items: center;
+    border: solid 2px #0d6efd;
+    border-radius: 10px;
 }
+
 .post-enter {
     transform: translateX(-350px);
 }
@@ -34,15 +36,19 @@
     transition: all 500ms ease-in;
 }
 .page__wrapper{
-    margin-top:30;
+    margin-top:30px;
     display: flex;
+    justify-content: start;
+    column-gap: 10px;
 }
 .page{
     padding:10px;
-    border:1px solid teal;
+    border:1px solid #0d6efd;
     cursor:pointer;
+    border-radius: 4px;
 }
 .page__current{
     border: 2px solid orange;
+    border-radius: 4px;
     font-weight: bold;
 }
